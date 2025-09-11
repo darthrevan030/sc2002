@@ -189,7 +189,20 @@ public class Lab2p1 {
     digit is not in the number, the method should return -1. For example, position(12315, 1) returns 2 and
     position(12, 3) returns -1. No error checking on the parameters is required in the method. 
     */
-    return 0;
+
+    int numDigits = countDigits(n);
+    int digitPosition = numDigits;
+
+    for (int i = numDigits; i > 0; i--){
+        int curDigit = n % 10;
+        if (curDigit == digit){
+            return digitPosition;
+        }
+        n = n/10;
+        digitPosition--;
+    }
+
+    return -1;
     }
 
     // Lab 2 Question 7
