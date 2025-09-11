@@ -15,6 +15,7 @@ public class Lab2p1 {
             System.out.println("7: quit");
             choice = sc.nextInt();
             
+            // Lab 2 Question 1
             switch (choice) {
                 case 1: /* add mulTest() call */
                     mulTest();
@@ -39,6 +40,8 @@ public class Lab2p1 {
                 case 4: /* add countDigits() call */
                     System.out.println("Enter n (a Positive Integer): ");
                     int n3 = sc.nextInt();
+
+///////////////////// Attempt to sanitize the input //////////////////////////////////////////////////////////////////
                     // while (true) {
                     //     if (sc.hasNextInt()){
                     //         n3 = sc.nextInt();
@@ -46,17 +49,17 @@ public class Lab2p1 {
                     //             break;
                     //         } else {
                     //             System.out.println("Negative Numbers are not allowed! Enter a Positive Integer: ");
-
                     //         }
                     //     } else {
                     //         System.out.println("Non-Integer Numbers are not allowed! Enter a Positive Integer :");
                     //         n3 = sc.nextInt();
                     //     }
                     // }
-
-                    int result = countDigits(n3);
-                    if (result != -1){
-                        System.out.println("n : " + n3 + " - count = " + result);
+/////////////////////////////// End of Attempt /////////////////////////////////////////////////////////////////////////////
+                    
+                    int countDigitsResult = countDigits(n3);
+                    if (countDigitsResult != -1){
+                        System.out.println("n : " + n3 + " - count = " + countDigitsResult);
                     }
                     break;
 
@@ -83,8 +86,10 @@ public class Lab2p1 {
                 case 7: System.out.println("Program terminating...");
             }
         } while (choice < 7);
+        sc.close();
     }
 
+    // Lab 2 Question 2
     public static void mulTest() {
         /*
         Write a method that is to test students ability to do multiplication. The method will ask a student 5
@@ -92,6 +97,7 @@ public class Lab2p1 {
         correct answers given by the student. The method random() from the Math class of the Java library
         can be used to produce two positive one-digit integers (i.e. 1,2,3,4, …) in each question. A sample
         screen display when the method is called is given below:
+        
         How much is 6 times 7? 42
         How much is 2 times 9? 18
         How much is 9 times 4? 36
@@ -99,9 +105,27 @@ public class Lab2p1 {
         4 answers out of 5 are correct.
         The input which is underlined is the student’s answer to a question
         */
-    
-    }
+        Scanner sc = new Scanner(System.in);
+        int countCorrectAns = 0;
+        
+        for (int i = 0; i <= 5; i++){
+            int num1 = (int)(Math.random() * 9) + 1;
+            int num2 = (int)(Math.random() * 9) + 1;
+            int correctAns = num1 * num2;
 
+            System.out.println("How much is " + num1 + " times " + num2 + "?");
+            int userAns = sc.nextInt();
+
+            if (userAns == correctAns){
+                countCorrectAns++;
+            }
+        }
+
+        System.err.println(countCorrectAns + " answers out of 5 are correct.");
+        sc.close();
+    }
+    
+    // Lab 2 Question 3
     public static int divide(int m, int n){
     /*
     Write the method divide() which does division by subtraction and returns the quotient of dividing m by
@@ -110,26 +134,54 @@ public class Lab2p1 {
     follows: 12-4=8, 8-4=4, and then 4-4=0, and it ends and returns the result of 3 as it performs three
     times in the subtraction operation. No error checking on the parameters is required in the method. 
     */
-    return 0;
+
+    int result = 0;
+    while(m >= n){
+        m = m - n;
+        result++;
+    }
+    return result;
     }
 
+    // Lab 2 Question 4
     public static int modulus(int m, int n){
     /*
     Write the method modulus() which does division by subtraction and returns the remainder of dividing
     m by n. Both m and n are positive integers. No error checking on the parameters is required in the
     method.
     */
-    return 0;
+    int result = 0;
+    while(m >= n){
+        m = m - n;
+        result++;
+    }
+    return result;
+
     }
 
+    // Lab 2 Question 5
     public static int countDigits(int n){
     /*
     Write a method to count the number of digits for a positive integer (i.e. 1,2,3,4,…). For example, 1234
     has 4 digits. The method countDigits() returns the result.
     */
-    return 0;
+    int numDigits = 0;
+
+    if (n < 0) {
+        System.out.println("n: " + n + "Error Input!! Input a Positive Integer");
+    }
+    if (n == 0){
+        return 1;
     }
 
+    while (n > 0){
+        n = n/10;
+        numDigits++;
+    }
+    return numDigits;
+    }
+
+    // Lab 2 Question 6
     public static int position(int n, int digit) {
     /*
     Write the method position() which returns the position of the first appearance of a specified digit in a
@@ -140,8 +192,7 @@ public class Lab2p1 {
     return 0;
     }
 
-
-
+    // Lab 2 Question 7
     public static long extractOddDigits(long n){
     /*
     Write a method extractOddDigits() which extracts the odd digits from a positive number n, and
