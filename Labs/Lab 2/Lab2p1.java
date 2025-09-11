@@ -108,7 +108,7 @@ public class Lab2p1 {
         Scanner sc = new Scanner(System.in);
         int countCorrectAns = 0;
         
-        for (int i = 0; i <= 5; i++){
+        for (int i = 0; i < 5; i++){
             int num1 = (int)(Math.random() * 9) + 1;
             int num2 = (int)(Math.random() * 9) + 1;
             int correctAns = num1 * num2;
@@ -122,7 +122,6 @@ public class Lab2p1 {
         }
 
         System.err.println(countCorrectAns + " answers out of 5 are correct.");
-        sc.close();
     }
     
     // Lab 2 Question 3
@@ -150,12 +149,10 @@ public class Lab2p1 {
     m by n. Both m and n are positive integers. No error checking on the parameters is required in the
     method.
     */
-    int result = 0;
     while(m >= n){
         m = m - n;
-        result++;
     }
-    return result;
+    return m;
 
     }
 
@@ -228,7 +225,29 @@ public class Lab2p1 {
     calling method. If the input number n does not contain any odd digits, then returns -1. For examples, if
     n=1234567, then 1357 is returned; and if n=28, then –1 is returned.
     */
-    return 0;
+
+    if (n <= 0){
+        return -1;
+    }
+
+
+    long oddNum = 0;
+    long multiplier = 1;
+    boolean foundOddDigit = false;
+
+    while (n > 0){
+        long digit = n % 10;
+
+        if (digit % 2 == 1){
+            oddNum = digit * multiplier + oddNum;
+            multiplier *= 10;
+            foundOddDigit = true;
+        }
+        n /= 10;
+    }
+    
+    // return oddNum if foundOddDigit == true, else return -1
+    return foundOddDigit ? oddNum : -1;
     }
 
 }
