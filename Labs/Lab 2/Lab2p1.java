@@ -190,6 +190,7 @@ public class Lab2p1 {
     position(12, 3) returns -1. No error checking on the parameters is required in the method. 
     */
 
+////////// counting from the back using the previous qn method /////////////////////////
     int numDigits = countDigits(n);
     int digitPosition = numDigits;
 
@@ -203,6 +204,20 @@ public class Lab2p1 {
     }
 
     return -1;
+
+///////// counting from the front - no dependency //////////////////////////////////
+    // int position = 1;
+        
+    //     while (n > 0) {
+    //         int currentDigit = n % 10;
+    //         if (currentDigit == digit) {
+    //             return position;
+    //         }
+    //         n = n / 10;
+    //         position++;
+    //     }
+        
+    //     return -1; // digit not found
     }
 
     // Lab 2 Question 7
