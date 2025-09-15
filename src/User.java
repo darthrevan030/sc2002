@@ -3,6 +3,10 @@ public class User {
     private String _membership;
     private int _age;
 
+    public enum Membership {
+        Bronze, Silver, Gold;
+    }
+
     void setName(String name){
         _name = name;
     }
@@ -15,6 +19,10 @@ public class User {
     }
     String getMembership(){
         return _membership;
+    }
+
+    void setMembership(Membership membership){
+        _membership = membership.name();
     }
 
     void setAge(int age){

@@ -20,5 +20,8 @@ public class OOP {
 
         System.out.println(u1.getAge()); // defaults to 0 since not set
         System.out.println(u2.getAge());
+
+        u1.setMembership(User.Membership.Gold);
+        System.out.println(u1.getMembership());
     }
 }
