@@ -3,6 +3,10 @@ public class User {
     private String _membership = "Bronze"; // set defaults
     private int _age = 0;
 
+    public User(String name) {
+        setName(name);
+    }
+
     public String toString() {
         return "Name: " + getName() + ", Membership: " + getMembership() + ", Age: " + getAge();
     }
