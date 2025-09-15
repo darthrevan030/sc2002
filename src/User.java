@@ -4,7 +4,7 @@ public class User {
     private int _age;
 
     public enum Membership {
-        Bronze, Silver, Gold;
+        Bronze, Silver, Gold
     }
 
     void setName(String name){
