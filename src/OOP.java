@@ -2,8 +2,7 @@ public class OOP {
 
     public static void main(String[] args) {
         System.out.println("Hello World");
-
-
+        
         // Instantiate an instance of the User class
 //        User u1 = new User(); // default constructor
 //        u1.setName("Tom");
