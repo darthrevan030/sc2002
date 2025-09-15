@@ -1,15 +1,27 @@
 public class User {
     private String _name;
-    String membership;
-    int age;
+    private String _membership;
+    private int _age;
 
-    void set_name(String name){
+    void setName(String name){
         _name = name;
     }
-
-    String get_name(){
+    String getName(){
         return _name;
     }
 
+    void setMembership(String membership){
+        _membership = membership;
+    }
+    String getMembership(){
+        return _membership;
+    }
+
+    void setAge(int age){
+        _age = age;
+    }
+    int getAge(){
+        return _age;
+    }
 
 }
