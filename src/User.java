@@ -1,7 +1,10 @@
 public class User {
     private String _name;
-    private String _membership;
-    private int _age;
+    private String _membership = "Bronze"; // set defaults
+    private int _age = 0;
+
+    public User(){
+    }
 
     // more concise constructor
     public User(String name, String membership, int age){
