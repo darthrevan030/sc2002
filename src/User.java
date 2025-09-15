@@ -10,12 +10,18 @@ public class User {
     private int _age = 0;
     private boolean _verified = false;
 
-    void setVerified(boolean verified){
+    public void setVerified(boolean verified){
         _verified = verified;
     }
-    boolean getVerified(){
+    public boolean getVerified(){
         return _verified;
     }
+
+    void verify(){
+        System.out.println("User is verified");
+        setVerified(true);
+    }
+
 
     public static List<User> admins;
 
