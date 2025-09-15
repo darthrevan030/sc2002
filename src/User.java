@@ -8,6 +8,14 @@ public class User {
     private String _name;
     private String _membership = "NO MEMBERSHIP"; // set defaults
     private int _age = 0;
+    private boolean _verified = false;
+
+    void setVerified(boolean verified){
+        _verified = verified;
+    }
+    boolean getVerified(){
+        return _verified;
+    }
 
     public static List<User> admins;
 
