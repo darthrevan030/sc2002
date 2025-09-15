@@ -29,7 +29,7 @@ public class OOP {
         System.out.println(u2.getAge());
 
         // setter
-        u1.setMembership(User.Membership.Gold);
+        u1.setMembership(User.Membership.GOLD);
         System.out.println(u1.getMembership());
 
         // blank instantiation
@@ -45,10 +45,16 @@ public class OOP {
         User u4 = new User("Jeff", "Bronze", 25);
         User u5 = new User("Jeff", "Bronze", 25);
 
+        // reference equality (==) - checks if same object in memory
         // comparison based on memory location --> same instance of an object
-        System.out.println(u5 == u4); // the .equals() method also works the same way
+        System.out.println(u5 == u4); // false - different objects
 
+        // These do the SAME thing if you don't override equals()
+//        System.out.println(u1 == u2);        // false
+//        System.out.println(u1.equals(u2));   // false (same as ==)
+
+        // content equality after overriding equals (.equals()) - checks if objects have same values
         // comparison based on the attributes of the instances using method overriding
-        System.out.println(u5.equals(u4));
+        System.out.println(u5.equals(u4)); // true - same name, membership, age
     }
 }

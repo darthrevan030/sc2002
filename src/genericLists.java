@@ -32,5 +32,7 @@ public class genericLists {
         for (int j = 0; j < User.admins.size(); j++) {
             System.out.println(User.admins.get(j).getName());
         }
+
+        User.printAdminNames();
     }
 }
