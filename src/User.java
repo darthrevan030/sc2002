@@ -1,5 +1,6 @@
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -11,11 +12,16 @@ public class User {
     public static List<User> admins;
 
     public static void printAdminNames(){
+        List <String> adminNames = new ArrayList<>();
         for (User u: User.admins) {
-            System.out.println(u.getName());
+            adminNames.add(u.getName());
         }
+        System.out.println(adminNames);
     }
 
+    public static void printAdminList(){
+        System.out.println(User.admins);
+    }
     @Override
     public String toString() {
         return "Name: " + getName() + ", Membership: " + getMembership() + ", Age: " + getAge();

@@ -21,18 +21,20 @@ public class genericLists {
         // 2 kinds of for loops
         // print all users in the list
         for (int i = 0; i < users.size(); i++) {
-            System.out.println(users.get(i).getName());
+            System.out.println("[" + users.get(i).getName()+ "]");
         }
 
         for (User u : users) {
-            System.out.println(u.getName());
+            System.out.println("'" + u.getName() + "'");
         }
 
         // print all Admins in the list
-        for (int j = 0; j < User.admins.size(); j++) {
-            System.out.println(User.admins.get(j).getName());
-        }
+//        for (int j = 0; j < User.admins.size(); j++) {
+//            System.out.println(User.admins.get(j).getName());
+//        }
 
         User.printAdminNames();
+
+        User.printAdminList();
     }
 }
