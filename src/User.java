@@ -3,6 +3,13 @@ public class User {
     private String _membership;
     private int _age;
 
+    // more concise constructor
+    public User(String name, String membership, int age){
+        setName(name);
+        setMembership(membership);
+        setAge(age);
+    }
+
     public enum Membership {
         Bronze, Silver, Gold
     }
