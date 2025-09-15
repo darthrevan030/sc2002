@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class User {
     private String _name;
-    private String _membership = "Bronze"; // set defaults
+    private String _membership = "NO MEMBERSHIP"; // set defaults
     private int _age = 0;
 
     public static List<User> admins;

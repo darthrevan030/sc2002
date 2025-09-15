@@ -33,7 +33,7 @@ public class OOP {
         System.out.println(u1.getMembership());
 
         // blank instantiation
-        System.out.println(u3.getMembership()); // defaults to Bronze
+        System.out.println(u3.getMembership()); // defaults to NO MEMBERSHIP
         System.out.println(u3.getAge()); // defaults to 0
         System.out.println(u3.getName()); // defaults to null
 
