@@ -1,11 +1,11 @@
+import java.util.List;
+
 public class User {
     private String _name;
     private String _membership = "Bronze"; // set defaults
     private int _age = 0;
 
-    public User(String name) {
-        setName(name);
-    }
+    public static List<User> admins;
 
     public String toString() {
         return "Name: " + getName() + ", Membership: " + getMembership() + ", Age: " + getAge();
@@ -19,7 +19,13 @@ public class User {
         }
     }
 
+    // constructor for blank
     public User(){
+    }
+
+    // constructor for just name
+    public User(String name) {
+        setName(name);
     }
 
     // more concise constructor
