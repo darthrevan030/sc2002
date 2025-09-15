@@ -1,4 +1,7 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
+import java.util.Objects;
 
 public class User {
     private String _name;
@@ -7,17 +10,40 @@ public class User {
 
     public static List<User> admins;
 
+    public static void printAdminNames(){
+        for (User u: User.admins) {
+            System.out.println(u.getName());
+        }
+    }
+
+    @Override
     public String toString() {
         return "Name: " + getName() + ", Membership: " + getMembership() + ", Age: " + getAge();
     }
 
-    public boolean equals(User user1){
-        if (getName() == user1.getName() && getMembership() == user1.getMembership() && getAge() == user1.getAge())
+    @Override
+    public boolean equals(Object object){
+        if (this == object){ // check reference value. if memory location is same then its the same instance
+            return true;
+        }
+
+        if (object == null || getClass() != object.getClass()){ // check that comparing the same class of objects and prevent nullPointerException
+            return false;
+        }
+
+        User user1 = (User) object; // cast Object to User
+        if (getName().equals(user1.getName()) && getMembership().equals(user1.getMembership()) && getAge() == user1.getAge())
             return true;
         else {
             return false;
         }
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(_name, _membership, _age);
+    }
+
 
     // constructor for blank
     public User(){
@@ -36,31 +62,31 @@ public class User {
     }
 
     public enum Membership {
-        Bronze, Silver, Gold
+        BRONZE, SILVER,GOLD
     }
 
-    void setName(String name){
+    public void setName(String name){
         _name = name;
     }
-    String getName(){
+    public String getName(){
         return _name;
     }
 
-    void setMembership(String membership){
+    public void setMembership(String membership){
         _membership = membership;
     }
-    String getMembership(){
+    public String getMembership(){
         return _membership;
     }
 
-    void setMembership(Membership membership){
+    public void setMembership(@NotNull Membership membership){
         _membership = membership.name();
     }
 
-    void setAge(int age){
+    public void setAge(int age){
         _age = age;
     }
-    int getAge(){
+    public int getAge(){
         return _age;
     }
 
