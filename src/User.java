@@ -3,6 +3,18 @@ public class User {
     private String _membership = "Bronze"; // set defaults
     private int _age = 0;
 
+    public String toString() {
+        return "Name: " + getName() + ", Membership: " + getMembership() + ", Age: " + getAge();
+    }
+
+    public boolean equals(User user1){
+        if (getName() == user1.getName() && getMembership() == user1.getMembership() && getAge() == user1.getAge())
+            return true;
+        else {
+            return false;
+        }
+    }
+
     public User(){
     }
 
