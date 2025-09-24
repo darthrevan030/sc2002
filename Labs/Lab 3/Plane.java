@@ -60,8 +60,7 @@ public class Plane {
             // Display by seat ID (natural order)
             for (int i = 0; i < 12; i++) {
                 if (seat[i].isOccupied()) {
-                    System.out.println("SeatID " + seat[i].getSeatID() + 
-                                     " assigned to CustomerID " + seat[i].getCustomerID() + ".");
+                    System.out.println("SeatID " + seat[i].getSeatID() + " assigned to CustomerID " + seat[i].getCustomerID() + ".");
                 }
             }
         } else {
@@ -69,8 +68,7 @@ public class Plane {
             PlaneSeat[] sortedSeats = sortSeats();
             for (int i = 0; i < 12; i++) {
                 if (sortedSeats[i].isOccupied()) {
-                    System.out.println("SeatID " + sortedSeats[i].getSeatID() + 
-                                     " assigned to CustomerID " + sortedSeats[i].getCustomerID() + ".");
+                    System.out.println("SeatID " + sortedSeats[i].getSeatID() + " assigned to CustomerID " + sortedSeats[i].getCustomerID() + ".");
                 }
             }
         }
