@@ -2,8 +2,8 @@ package part2;
 
 public class Cone implements Shape
 {
-    private double radius;
-    private double height;
+    private final double radius;
+    private final double height;
     
     public Cone(double radius, double height)
     {
@@ -11,6 +11,7 @@ public class Cone implements Shape
         this.height = height;
     }
     
+    @Override
     public double getArea()
     {
         // Surface area = πr² + πr * slant_height

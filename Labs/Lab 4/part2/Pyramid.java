@@ -2,8 +2,8 @@ package part2;
 
 public class Pyramid implements Shape
 {
-    private double base;  // side of square base
-    private double height;
+    private final double base;  // side of square base
+    private final double height;
     
     public Pyramid(double base, double height)
     {
@@ -11,6 +11,7 @@ public class Pyramid implements Shape
         this.height = height;
     }
     
+    @Override
     public double getArea()
     {
         // Surface area = base² + 2 * base * slant_height

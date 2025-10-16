@@ -2,8 +2,8 @@ package part2;
 
 public class Rectangle implements Shape
 {
-    private double length;
-    private double breadth;
+    private final double length;
+    private final double breadth;
     
     public Rectangle(double length, double breadth)
     {
@@ -11,6 +11,7 @@ public class Rectangle implements Shape
         this.breadth = breadth;
     }
     
+    @Override
     public double getArea()
     {
         return length * breadth;

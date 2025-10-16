@@ -2,8 +2,8 @@ package part2;
 
 public class Cylinder implements Shape
 {
-    private double radius;
-    private double height;
+    private final double radius;
+    private final double height;
     
     public Cylinder(double radius, double height)
     {
@@ -11,6 +11,7 @@ public class Cylinder implements Shape
         this.height = height;
     }
     
+    @Override
     public double getArea()
     {
         // Surface area = 2πr² + 2πrh (two circles + curved surface)

@@ -2,9 +2,9 @@ package part2;
 
 public class Cuboid implements Shape
 {
-    private double length;
-    private double breadth;
-    private double height;
+    private final double length;
+    private final double breadth;
+    private final double height;
     
     public Cuboid(double length, double breadth, double height)
     {
@@ -13,6 +13,7 @@ public class Cuboid implements Shape
         this.height = height;
     }
     
+    @Override
     public double getArea()
     {
         // Surface area = 2(lb + bh + lh)
