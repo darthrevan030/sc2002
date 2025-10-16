@@ -1,3 +1,4 @@
+package part1;
 public class Sorting
 {
 	//-----------------------------------------------------------------
@@ -24,19 +25,23 @@ public class Sorting
 	// Sorts the specified array of objects using the insertion
 	// sort algorithm.
 	//-----------------------------------------------------------------
+	//-----------------------------------------------------------------
+	// Sorts the specified array of objects using the insertion
+	// sort algorithm in DESCENDING order.
+	//-----------------------------------------------------------------
 	public static void insertionSort (Comparable[] list)
 	{
 		for (int index = 1; index < list.length; index++)
 		{
 			Comparable key = list[index];
 			int position = index;
-			// Shift larger values to the right
-			while (position > 0 && key.compareTo(list[position-1]) < 0)
+			// Shift smaller values to the right (changed from > to <)
+			while (position > 0 && key.compareTo(list[position-1]) > 0)
 			{
 				list[position] = list[position-1];
 				position--;
 			}
-				list[position] = key;
+			list[position] = key;
 		}
 	}
 }
